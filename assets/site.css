@@ -59,6 +59,8 @@ h3{font-size:1.2rem;font-weight:700}
 .chip{z-index:5;animation:bob 5s ease-in-out infinite}
 .chip:nth-of-type(2){animation-delay:-1.5s}
 .chip:nth-of-type(3){animation-delay:-3s}
+.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
+.chips .chip{position:static}
 .chip i{width:12px;height:12px;border-radius:50%;display:block}
 .pill{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:26px 0;border-block:1px solid var(--line);background:var(--bg-alt)}
 .pill span{font-weight:650;color:var(--accent);padding:6px 16px}
