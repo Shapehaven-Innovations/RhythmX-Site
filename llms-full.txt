@@ -1,0 +1,302 @@
+# RhythmX: full documentation
+
+Source: app README from https://github.com/Shapehaven-Innovations/RhythmX, followed by the text of the site guides. Website: https://rhythmx.shapehaveninnovations.com/
+
+---
+
+# RhythmX
+
+A private menstrual cycle tracker for iPhone. Log your cycle, tag how you feel, and see your patterns. Everything stays on your device.
+
+**No account. No ads. No tracking. No network access.**
+
+![iOS 18+](https://img.shields.io/badge/iOS-18%2B-5E264F) ![SwiftUI](https://img.shields.io/badge/SwiftUI-Swift%205-E8A5B8) ![License](https://img.shields.io/badge/license-Apache%202.0-lightgrey)
+
+---
+
+## Features
+
+- **Insights**: a phase ring with today's moon, average cycle and period length, next-period estimate, and charts for phase timing, tags and cervical mucus.
+- **Calendar**: a month grid tinted by phase, with a Today card, predicted period days, and a day panel to add or review tags.
+- **Tags**: log symptoms, moods and notes by phase, shown as chips you can edit or remove.
+- **Cycles**: start a new cycle from a first day and length, and read the Phase Guide.
+- **Past Cycles**: archive finished cycles, search them, edit their tags, and swipe to delete one.
+- **Reminders**: optional notifications the day before and the day of your next period.
+- **Share**: export selected phases as a calendar (`.ics`) file, only when you choose to.
+- **Light and dark mode**: blush in light, deep plum in dark, with a moon for each phase: new, crescent, full, waning.
+- **Accessibility**: Dynamic Type up to accessibility sizes, VoiceOver labels, Reduce Motion support.
+
+## Privacy
+
+- Data lives in on-device `UserDefaults` and never leaves the phone unless you share an export.
+- No third-party SDKs, analytics, accounts or network calls.
+- Ships with a privacy manifest (`PrivacyInfo.xcprivacy`) and is intended for the App Store "Data Not Collected" label.
+
+## Requirements
+
+- iOS 18.0 or newer, iPhone
+- Xcode with the iOS 18 SDK
+- Swift 5, SwiftUI, Swift Charts
+
+## Build and run
+
+1. Clone this repository.
+2. Open `RhythmX.xcodeproj` in Xcode.
+3. Select the `RhythmX` scheme and run on an iOS 18+ simulator or device.
+
+First launch shows a three-page onboarding. The last page sets your first cycle and generates its events. You can skip it and start from the **Cycles** tab instead.
+
+## Tests
+
+```sh
+xcodebuild test -scheme RhythmX \
+  -destination 'platform=iOS Simulator,name=<an installed iOS 18+ simulator>'
+```
+
+List installed simulators with `xcrun simctl list devices available`.
+
+## Project layout
+
+```
+RhythmX/
+  Models/        EventStore, ArchivedDataStore, persistence
+  Services/      CycleGenerator, TagParser, CalendarMonthModel, PhaseGuideContent
+  Views/         Insights, Calendar, Tags, Cycles, Settings, Onboarding
+  Views/Components/  MoonPhaseView, WaveBackground, PhaseRingView, PhaseStrip, CardStyle
+  DesignSystem.swift  colors, spacing, shared styles
+RhythmXTests/    unit tests
+```
+
+## Contributing
+
+Bug reports, ideas and pull requests are welcome.
+
+1. Fork the repo and create a feature branch.
+2. Make your change and run the tests.
+3. Open a pull request describing what changed and why.
+
+## Reporting issues
+
+Open an issue with the steps to reproduce, your iOS version and device model, and a screenshot if it helps.
+
+## Disclaimer
+
+RhythmX is a tracking tool, not medical advice. Predictions are estimates. Talk to a healthcare professional about health concerns.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
+
+---
+
+## Guide: How to track your cycle privately
+(https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/)
+
+How to Track Your Menstrual Cycle Privately (No Account Needed)
+
+Skip to content
+
+RhythmX › Guides
+
+How to track your menstrual cycle privately
+
+Last updated October 10, 2026
+
+Pick a tracker that needs no account, makes no network calls and keeps your data on your phone. Check four things before you log anything.
+
+Why cycle data is sensitive
+
+A cycle log records when you bleed, how you feel and, in many apps, notes about your health and sex life. Taken together over months, it shows more about your body than most people share with anyone.
+
+Where that record lives matters. Data stored only on your phone is limited to the people who can unlock the phone. Data copied to a company's servers is subject to that company's policies, security and legal exposure for as long as it stays there.
+
+Four checks for any tracker
+
+Does it require an account? An account usually means your entries are tied to an email address and stored on a server. Look for an app that works from the first launch without signing up.
+
+Does it include third-party SDKs or analytics? SDKs are code from other companies bundled into the app. Check the app's privacy policy, and its source code if it is open.
+
+Does it make network calls? An app that never needs the internet cannot send your data anywhere. Look for a "Data Not Collected" label on the App Store page, and on iPhone review Settings › Privacy & Security › App Privacy Report after using the app for a few days.
+
+Do you control export and deletion? You should be able to delete entries instantly and share data only when you choose to.
+
+A label or a policy is a claim. Open-source code lets anyone verify the claim.
+
+How RhythmX answers each one
+
+ | Check | RhythmX
+
+ | Account | None. Open the app and start logging.
+
+ | Third-party SDKs and analytics | None. No ads, trackers or analytics.
+
+ | Network access | None. The app makes no network calls.
+
+ | Where data lives | On-device UserDefaults. It never leaves the phone unless you share an export.
+
+ | Privacy manifest | Ships a PrivacyInfo.xcprivacy file and is intended for the App Store "Data Not Collected" label.
+
+ | Export | Optional calendar (.ics) export of the phases you pick, only when you choose to.
+
+ | Deletion | Swipe to delete a tag or an archived cycle.
+
+ | Verifiable | Open source under Apache 2.0 on GitHub.
+
+Back up and switch phones
+
+Because RhythmX stores data on the device, it has no cloud copy to restore from. Whether your entries move to a new phone depends on your iPhone backup, so confirm that your iCloud or computer backup includes app data before you switch or reset a device.
+
+Limits
+
+RhythmX is a tracking tool, not a medical device. Predictions are estimates based on the cycles you log, and they are not a form of contraception. For health concerns, talk to a healthcare professional. For what each phase typically involves, see the cycle phases reference.
+
+Track privately on your iPhone
+
+RhythmX is free, open source and runs entirely on your phone. iOS 18 or newer.
+
+Download on the App Store
+
+---
+
+## Reference: Menstrual cycle phases
+(https://rhythmx.shapehaveninnovations.com/guides/menstrual-cycle-phases-reference/)
+
+Menstrual Cycle Phases Reference: Timing, Hormones, Symptoms
+
+Skip to content
+
+RhythmX › Guides
+
+Menstrual cycle phases reference
+
+Last updated October 10, 2026
+
+General information, not medical advice. Cycles vary from person to person, so treat these as typical ranges. Talk to a healthcare professional about health concerns.
+
+A typical 28-day cycle has four phases: menstrual (days 1 to 5), follicular (days 1 to 13), ovulatory (around day 14) and luteal (days 15 to 28).
+
+At a glance
+
+ | Phase | Typical timing | Key hormones | Pregnancy probability
+
+ | Menstrual | Day 1 to 5 | Estrogen and progesterone low | Very low
+
+ | Follicular | Day 1 to 13 | FSH, rising estrogen | Increasing, still moderate
+
+ | Ovulatory | Around day 14 | LH surge | Peak fertility window
+
+ | Luteal | Day 15 to 28 | Progesterone, some estrogen | Higher early, then decreases
+
+The follicular phase begins on day 1 and overlaps with menstruation until bleeding stops. It continues up to ovulation.
+
+1. Menstrual phase
+
+Typical timing: day 1 to day 5, overlapping with the early part of the follicular phase.
+
+What's happening
+
+Estrogen and progesterone are relatively low at the start of menstruation, because the corpus luteum from the previous cycle is no longer producing high levels of progesterone. The endometrium (uterine lining) sheds, which causes menstrual bleeding.
+
+Pregnancy probability
+
+Very low. Menstruation marks the start of a new cycle and ovulation is still roughly 10 to 14 days away. It is not zero, especially with a shorter cycle or because sperm can remain viable in the reproductive tract for several days.
+
+Common mood and symptoms
+
+Mood: some people feel relief from premenstrual symptoms once bleeding begins, while others still have mood changes such as fatigue or irritability.
+
+Physical: cramping (dysmenorrhea), bloating, backaches, breast tenderness and headaches. Energy may be lower.
+
+Tips
+
+Warm compresses or gentle heat can help relieve cramps.
+
+Staying hydrated and keeping up light to moderate exercise, such as yoga or walking, can improve mood and circulation.
+
+Iron-rich foods or supplements may help if you are prone to low iron from menstrual blood loss. Ask a healthcare provider for personal advice.
+
+2. Follicular phase
+
+Typical timing: day 1 to day 13.
+
+What's happening
+
+Follicle-stimulating hormone (FSH) from the pituitary gland stimulates ovarian follicles to develop, and estrogen begins to rise. Several follicles start to mature, but usually only one becomes dominant and is prepared for ovulation. The endometrium starts to thicken again under rising estrogen.
+
+Pregnancy probability
+
+Increasing but still moderate. The closer you get to ovulation, the higher the chance of pregnancy from unprotected intercourse. Sperm can survive up to about five days in fertile cervical mucus.
+
+Common mood and symptoms
+
+Mood: as estrogen climbs, many people notice better mood, more energy and clearer thinking.
+
+Physical: a possible gradual rise in libido, and cervical fluid that is thinner and more elastic ("fertile mucus"). PMS-like symptoms are often fewer than in the luteal phase.
+
+Tips
+
+This is often a good time for high-energy workouts and social activities.
+
+If you are trying to conceive, tracking cervical mucus or using ovulation predictor kits toward the end of this phase can help.
+
+3. Ovulatory phase
+
+Typical timing: around day 14 in a 28-day cycle.
+
+What's happening
+
+A surge in luteinizing hormone (LH) triggers the dominant follicle to release the mature egg. The egg moves into the fallopian tube, where it stays viable for about 12 to 24 hours.
+
+Pregnancy probability
+
+This is the peak fertility window. Sperm present in the reproductive tract up to about five days before ovulation, on the day, or shortly after can fertilize the egg.
+
+Common mood and symptoms
+
+Mood: often more libido, energy and confidence, linked to peaking estrogen and testosterone.
+
+Physical: some people feel mild pelvic twinges (Mittelschmerz). Cervical mucus becomes clear and stretchy, like egg white, and basal body temperature may rise slightly after ovulation.
+
+Tips
+
+If you are trying to conceive, intercourse in the days leading up to and including ovulation matters most.
+
+Staying hydrated and listening to your body can help with mild ovulatory discomfort.
+
+4. Luteal phase
+
+Typical timing: day 15 to day 28.
+
+What's happening
+
+After the egg is released, the follicle becomes the corpus luteum, which secretes progesterone and some estrogen. Progesterone prepares the uterus for a possible pregnancy, and the endometrium becomes thicker and more glandular.
+
+Pregnancy probability
+
+Higher early in the luteal phase, then decreasing. If fertilization and implantation occur, progesterone stays high (supported by hCG) to sustain the pregnancy. If not, progesterone drops and the uterine lining sheds as menstruation.
+
+Common mood and symptoms
+
+Mood: PMS or PMDD symptoms can appear as progesterone and estrogen fall toward the end of the phase: irritability, low mood, anxiety and mood swings.
+
+Physical: bloating, breast tenderness, fatigue, food cravings, changes in bowel habits and fluid retention.
+
+Tips
+
+Nutrient-dense foods, balanced meals and enough water can help steady mood and energy.
+
+Moderate exercise, mindfulness and stress reduction can ease PMS symptoms.
+
+Tracking symptoms helps you spot patterns and manage the changes.
+
+Where RhythmX fits
+
+RhythmX shows today's phase as a moon on the Insights ring (new, crescent, full or waning), tints the calendar by phase and keeps this same Phase Guide in the app. Everything stays on your iPhone. To see why that matters, read how to track your cycle privately.
+
+See your own phases
+
+Log a cycle and RhythmX shows where you are today, with no account and no tracking.
+
+Download on the App Store
+
+General information, not medical advice. Talk to a healthcare professional about health concerns.

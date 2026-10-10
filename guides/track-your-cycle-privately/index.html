@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FBF1F2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2E1B33" media="(prefers-color-scheme: dark)">
+<title>How to Track Your Menstrual Cycle Privately (No Account Needed)</title>
+<meta name="description" content="What to look for in a private period tracker: accounts, SDKs, network calls and exports, and how RhythmX keeps cycle data on your iPhone.">
+<link rel="canonical" href="https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/">
+<link rel="icon" type="image/png" href="/assets/icon-rounded.png">
+<link rel="apple-touch-icon" href="/assets/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="RhythmX">
+<meta property="og:title" content="How to Track Your Menstrual Cycle Privately (No Account Needed)">
+<meta property="og:description" content="What to look for in a private period tracker: accounts, SDKs, network calls and exports, and how RhythmX keeps cycle data on your iPhone.">
+<meta property="og:url" content="https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/">
+<meta property="og:image" content="https://rhythmx.shapehaveninnovations.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RhythmX app icon and the Insights screen showing Day 16, Ovulation Phase">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Track Your Menstrual Cycle Privately (No Account Needed)">
+<meta name="twitter:description" content="What to look for in a private period tracker: accounts, SDKs, network calls and exports, and how RhythmX keeps cycle data on your iPhone.">
+<meta name="twitter:image" content="https://rhythmx.shapehaveninnovations.com/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Track Your Menstrual Cycle Privately (No Account Needed)",
+  "description": "What to look for in a private period tracker: accounts, SDKs, network calls and exports, and how RhythmX keeps cycle data on your iPhone.",
+  "datePublished": "2026-10-10",
+  "dateModified": "2026-10-10",
+  "mainEntityOfPage": "https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/",
+  "image": "https://rhythmx.shapehaveninnovations.com/assets/og.png",
+  "author": { "@type": "Organization", "name": "ShapeHaven Innovations", "url": "https://shapehaveninnovations.com/" },
+  "publisher": { "@type": "Organization", "name": "ShapeHaven Innovations", "url": "https://shapehaveninnovations.com/" }
+}
+</script>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="/"><img src="/assets/icon-rounded.png" alt="" width="34" height="34">RhythmX</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <nav id="nav-links" class="nav-links" aria-label="Main">
+      <a href="/#features">Features</a>
+      <a href="/#phases">Phases</a>
+      <a href="/#privacy">Privacy</a>
+      <a href="/guides/track-your-cycle-privately/">Guides</a>
+      <a href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" data-appstore href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap article">
+<article>
+  <p class="crumb"><a href="/">RhythmX</a> &rsaquo; Guides</p>
+  <h1>How to track your menstrual cycle privately</h1>
+  <p class="meta">Last updated October 10, 2026</p>
+  <p class="lead">Pick a tracker that needs no account, makes no network calls and keeps your data on your phone. Check four things before you log anything.</p>
+
+  <h2>Why cycle data is sensitive</h2>
+  <p>A cycle log records when you bleed, how you feel and, in many apps, notes about your health and sex life. Taken together over months, it shows more about your body than most people share with anyone.</p>
+  <p>Where that record lives matters. Data stored only on your phone is limited to the people who can unlock the phone. Data copied to a company's servers is subject to that company's policies, security and legal exposure for as long as it stays there.</p>
+
+  <h2>Four checks for any tracker</h2>
+  <ol>
+    <li><strong>Does it require an account?</strong> An account usually means your entries are tied to an email address and stored on a server. Look for an app that works from the first launch without signing up.</li>
+    <li><strong>Does it include third-party SDKs or analytics?</strong> SDKs are code from other companies bundled into the app. Check the app's privacy policy, and its source code if it is open.</li>
+    <li><strong>Does it make network calls?</strong> An app that never needs the internet cannot send your data anywhere. Look for a "Data Not Collected" label on the App Store page, and on iPhone review Settings &rsaquo; Privacy &amp; Security &rsaquo; App Privacy Report after using the app for a few days.</li>
+    <li><strong>Do you control export and deletion?</strong> You should be able to delete entries instantly and share data only when you choose to.</li>
+  </ol>
+  <p class="callout">A label or a policy is a claim. Open-source code lets anyone verify the claim.</p>
+
+  <h2>How RhythmX answers each one</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Check</th><th>RhythmX</th></tr></thead>
+      <tbody>
+        <tr><td>Account</td><td>None. Open the app and start logging.</td></tr>
+        <tr><td>Third-party SDKs and analytics</td><td>None. No ads, trackers or analytics.</td></tr>
+        <tr><td>Network access</td><td>None. The app makes no network calls.</td></tr>
+        <tr><td>Where data lives</td><td>On-device <code>UserDefaults</code>. It never leaves the phone unless you share an export.</td></tr>
+        <tr><td>Privacy manifest</td><td>Ships a <code>PrivacyInfo.xcprivacy</code> file and is intended for the App Store "Data Not Collected" label.</td></tr>
+        <tr><td>Export</td><td>Optional calendar (<code>.ics</code>) export of the phases you pick, only when you choose to.</td></tr>
+        <tr><td>Deletion</td><td>Swipe to delete a tag or an archived cycle.</td></tr>
+        <tr><td>Verifiable</td><td>Open source under Apache 2.0 on <a href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">GitHub</a>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Back up and switch phones</h2>
+  <p>Because RhythmX stores data on the device, it has no cloud copy to restore from. Whether your entries move to a new phone depends on your iPhone backup, so confirm that your iCloud or computer backup includes app data before you switch or reset a device.</p>
+
+  <h2>Limits</h2>
+  <p>RhythmX is a tracking tool, not a medical device. Predictions are estimates based on the cycles you log, and they are not a form of contraception. For health concerns, talk to a healthcare professional. For what each phase typically involves, see the <a href="/guides/menstrual-cycle-phases-reference/">cycle phases reference</a>.</p>
+
+  <aside class="cta-box">
+    <h2>Track privately on your iPhone</h2>
+    <p>RhythmX is free, open source and runs entirely on your phone. iOS 18 or newer.</p>
+    <p><a class="btn" data-appstore href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">Download on the App Store</a></p>
+  </aside>
+</article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p class="disclaimer">RhythmX is a tracking tool, not medical advice. Predictions are estimates. Talk to a healthcare professional about health concerns.</p>
+    <span>&copy; ShapeHaven Innovations LLC &middot; Apache 2.0 licensed &middot; <a href="https://shapehaveninnovations.com/">A Shapehaven Innovations product</a></span>
+    <span>
+      <a href="/guides/track-your-cycle-privately/">Guide: Track your cycle privately</a>
+      <a href="/guides/menstrual-cycle-phases-reference/">Reference: Cycle phases</a>
+      <a href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/Shapehaven-Innovations/RhythmX/issues" target="_blank" rel="noopener">Feedback</a>
+      <a data-appstore href="https://github.com/Shapehaven-Innovations/RhythmX" target="_blank" rel="noopener">App Store</a>
+    </span>
+  </div>
+</footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# RhythmX
+
+> RhythmX is a free, open-source iPhone app (iOS 18+) for private menstrual cycle tracking. Log your cycle, tag symptoms and moods, and see your patterns. No account, no ads, no tracking and no network access: data stays on the device. Developer: ShapeHaven Innovations LLC. License: Apache 2.0.
+
+## Features
+
+- Insights: a phase ring with today's moon, average cycle and period length, next-period estimate, and charts for phase timing, tags and cervical mucus.
+- Calendar: a month grid tinted by phase, predicted period days, and a day panel to add or review tags.
+- Tags: log symptoms, moods and notes by phase.
+- Cycles and Past Cycles: start a cycle, read the Phase Guide, archive, search and edit finished cycles.
+- Reminders: optional notifications the day before and the day of your next period.
+- Share: export selected phases as a calendar (.ics) file, only when you choose to.
+- Accessibility: Dynamic Type, VoiceOver labels, Reduce Motion support, light and dark mode.
+
+## Links
+
+- [Full documentation](https://rhythmx.shapehaveninnovations.com/llms-full.txt): app README and guide text in one file
+- [Website](https://rhythmx.shapehaveninnovations.com/): product overview and screenshots
+- [Guide: How to track your cycle privately](https://rhythmx.shapehaveninnovations.com/guides/track-your-cycle-privately/): four checks for any period tracker
+- [Reference: Menstrual cycle phases](https://rhythmx.shapehaveninnovations.com/guides/menstrual-cycle-phases-reference/): timing, hormones, symptoms and tips per phase
+- [Source code and documentation](https://github.com/Shapehaven-Innovations/RhythmX): README, issues and contributions
+
+## Feedback
+
+- [Request a feature or report a bug](https://github.com/Shapehaven-Innovations/RhythmX/issues/new): feature ideas, bug reports and pull requests are welcome on GitHub.

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rhythmx.shapehaveninnovations.com/sitemap.xml
