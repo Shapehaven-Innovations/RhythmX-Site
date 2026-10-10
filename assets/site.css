@@ -4,6 +4,7 @@
   --bg:#FBF1F2; --bg-alt:#fff7f8; --surface:#fff; --ink:#2A1626; --muted:#6b5663; --line:#ecd9dc;
   --accent:#5E264F; --accent-ink:#fff; --shadow:rgba(60,20,50,.4);
   --grad:linear-gradient(145deg,#f4c9c9,#d9cdea 60%,#cfe3d8);
+  --glow-a:rgba(244,201,201,.7); --glow-b:rgba(207,227,216,.45); --ring:rgba(94,38,79,.18);
   --header-bg:rgba(255,255,255,.94); --nav-ink:#2A1626;
   color-scheme:light dark;
 }
@@ -12,6 +13,7 @@
     --bg:#2E1B33; --bg-alt:#37213c; --surface:#442a4b; --ink:#f3e6ef; --muted:#cdb4c6; --line:#5a3c63;
     --accent:#E8A5B8; --accent-ink:#1F1220; --shadow:rgba(0,0,0,.6);
     --grad:linear-gradient(145deg,#6a3560,#4a3a73 60%,#3a5a56);
+    --glow-a:rgba(106,53,96,.75); --glow-b:rgba(58,90,86,.5); --ring:rgba(232,165,184,.25);
     --header-bg:rgba(79,48,86,.96); --nav-ink:#fff;
   }
 }
@@ -53,15 +55,10 @@ h3{font-size:1.2rem;font-weight:700}
 .hero p.lead{font-size:1.2rem;color:var(--muted);margin:22px 0 32px;max-width:34ch}
 .cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero small{display:block;margin-top:16px;color:var(--muted);font-size:.85rem}
-.stage{position:relative;height:620px}
-.blob{position:absolute;inset:30px 0 0 30px;animation:morph 14s ease-in-out infinite;border-radius:48% 52% 45% 55%/55% 45% 55% 45%;background:var(--grad)}
-.chip{position:absolute;background:var(--surface);color:var(--ink);border-radius:16px;padding:10px 14px;font-size:.85rem;font-weight:650;box-shadow:0 12px 30px -10px var(--shadow);display:flex;align-items:center;gap:8px}
-.chip{z-index:5;animation:bob 5s ease-in-out infinite}
-.chip:nth-of-type(2){animation-delay:-1.5s}
-.chip:nth-of-type(3){animation-delay:-3s}
-.chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:18px}
-.chips .chip{position:static}
-.chip i{width:12px;height:12px;border-radius:50%;display:block}
+.stage{position:relative;height:600px}
+.halo{position:absolute;left:50%;top:50%;width:500px;height:500px;margin:-250px 0 0 -250px;border-radius:50%;background:radial-gradient(circle,var(--glow-a) 0,var(--glow-b) 62%,transparent 70%);box-shadow:inset 0 0 0 1.5px var(--ring);animation:breathe 9s ease-in-out infinite}
+.halo .moon{position:absolute;width:38px;height:38px;margin:-19px 0 0 -19px}
+.halo .m-a{left:14.6%;top:14.6%}.halo .m-b{left:85.4%;top:14.6%}.halo .m-c{left:85.4%;top:85.4%}.halo .m-d{left:14.6%;top:85.4%}
 .pill{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;padding:26px 0;border-block:1px solid var(--line);background:var(--bg-alt)}
 .pill span{font-weight:650;color:var(--accent);padding:6px 16px}
 
@@ -74,10 +71,8 @@ h3{font-size:1.2rem;font-weight:700}
 .device::after{content:"";position:absolute;inset:9px;border-radius:41px;pointer-events:none;background:linear-gradient(115deg,rgba(255,255,255,.28),rgba(255,255,255,0) 34%,rgba(255,255,255,0) 70%,rgba(255,255,255,.08))}
 .shot .device{transform-style:preserve-3d}
 .shot .device:hover{box-shadow:inset 0 0 0 1.5px #6b5a68,inset 0 2px 1px #8a7886,0 1px 0 rgba(255,255,255,.25),0 30px 40px -14px rgba(0,0,0,.5),0 80px 90px -34px var(--shadow)}
-.stage .device{position:absolute;width:250px;left:50%;top:0;margin-left:-125px}
-.stage .d-main{z-index:3;--r:4deg;transform:rotate(var(--r));animation:float 7s ease-in-out infinite}
-.stage .d-left{z-index:2;width:210px;margin-left:-250px;top:70px;--r:-9deg;transform:rotate(var(--r));filter:saturate(.95) brightness(.97);animation:float 8s ease-in-out -2s infinite}
-.stage .d-right{z-index:1;width:210px;margin-left:50px;top:110px;--r:10deg;transform:rotate(var(--r));filter:saturate(.95) brightness(.95);animation:float 9s ease-in-out -4s infinite}
+.stage .device{position:absolute;width:260px;left:50%;top:30px;margin-left:-130px}
+.stage .d-main{z-index:3;animation:float 7s ease-in-out infinite}
 
 /* landing: sections */
 section{padding:90px 0}
@@ -119,8 +114,7 @@ a.card .go{display:inline-block;margin-top:14px;font-weight:650;color:var(--acce
 
 /* motion */
 @keyframes float{50%{translate:0 -14px}}
-@keyframes bob{50%{translate:0 -8px}}
-@keyframes morph{50%{border-radius:55% 45% 52% 48%/45% 58% 42% 55%;rotate:4deg}}
+@keyframes breathe{50%{scale:1.03}}
 @keyframes rise{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
 .hero .eyebrow,.hero h1,.hero .lead,.hero .cta,.hero small{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
 .hero h1{animation-delay:.08s}.hero .lead{animation-delay:.16s}.hero .cta{animation-delay:.24s}.hero small{animation-delay:.32s}
@@ -168,12 +162,12 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;back
   .feat.rev .shot{order:0}
   .feat{gap:36px}
   .feats{gap:70px}
-  .stage{height:560px}
+  .stage{height:540px}
+  .halo{width:340px;height:340px;margin:-170px 0 0 -170px}
+  .halo .moon{width:30px;height:30px;margin:-15px 0 0 -15px}
   .device{width:260px}
-  .stage .device{width:220px;margin-left:-110px}
-  .stage .d-left{margin-left:-215px;width:170px}
-  .stage .d-right{margin-left:45px;width:170px}
-  .cards,.cards.two{grid-template-columns:1fr}
+  .stage .device{width:210px;margin-left:-105px;top:24px}
+      .cards,.cards.two{grid-template-columns:1fr}
   .phases,.privacy-grid{grid-template-columns:1fr 1fr}
   section{padding:64px 0}
 }
