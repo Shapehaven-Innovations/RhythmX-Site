@@ -77,6 +77,13 @@
   font-style: normal;
   line-height: 1.5;
   text-align: left;
+  /* undo generic `footer { display:flex; margin; padding; gap }` rules in host pages */
+  display: block;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  width: auto;
+  max-width: none;
 }
 
 .site-footer__inner {
